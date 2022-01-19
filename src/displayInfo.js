@@ -15,10 +15,10 @@ function DisplayInfo() {
                 let data = e.data();
                 let date = new Date(data.mailedOn.seconds * 1000);
 
-                return { 
-                    id: e.id, 
+                return {
+                    id: e.id,
                     name: data.name,
-                    email: data.email ,
+                    email: data.email,
                     message: data.message,
                     mailedOn: moment(date).format('DD-MM-YYYY h:m:s a')
                 };
@@ -29,36 +29,32 @@ function DisplayInfo() {
     }, [])
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <td>
-                        Name
-                    </td>
-                    <td>
-                        Email
-                    </td>
-                    <td style={{ width:'650px' }}>
-                        Message
-                    </td>
-                    <td>
-                        Time
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    data.map((e, idx) => (
-                        <tr key={idx}>
-                            <td>{e.name}</td>
-                            <td>{e.email}</td>
-                            <td className="text-limit">{e.message}</td>
-                            <td>{e.mailedOn}</td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        <div className="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        data.map((e, idx) => (
+                            <tr key={idx}>
+                                <td>{idx + 1}.</td>
+                                <td>{e.name}</td>
+                                <td>{e.email}</td>
+                                <td>{e.message}</td>
+                                <td>{e.mailedOn}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
 
 
     )

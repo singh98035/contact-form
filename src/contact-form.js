@@ -35,51 +35,52 @@ function Contact() {
     }
 
 
-    function sendMail()
-    {
+    function sendMail() {
         emailjs.sendForm('service_yg8ed3h', 'template_fad1v0p', form.current, 'user_LiVPS4S2pVkvnkG3y3rWs')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-           alert("Something went Wrong! Check your email Address");
-        });
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                alert("Something went Wrong! Check your email Address");
+            });
     }
 
     return (
-        <form ref={form} className="app" onSubmit={submit}>
-            <h1>Contact Us</h1>
+        <div className="app">
+            <form ref={form} onSubmit={submit}>
+                <h1>Contact Us</h1>
 
-            <label>Name</label>
-            <input
-                placeholder="Name"
-                value={name}
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-            />
+                <label>Name</label>
+                <input
+                    placeholder="Name"
+                    value={name}
+                    name="name"
+                    onChange={(e) => setName(e.target.value)}
+                />
 
-            <label>Email</label>
-            <input
-                placeholder="Email"
-                value={email}
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-            />
+                <label>Email</label>
+                <input
+                    placeholder="Email"
+                    value={email}
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
 
-            <label>Message</label>
-            <textarea
-                placeholder="Message"
-                value={message}
-                name="message"
-                onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
+                <label>Message</label>
+                <textarea
+                    placeholder="Message"
+                    value={message}
+                    name="message"
+                    onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
 
-            <button
-                type="submit"
-                style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
-            >
-                Submit
-            </button>
-        </form>
+                <button
+                    type="submit"
+                    style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
     );
 };
 

@@ -14,21 +14,18 @@ body {
   background-color: #fff;
 }
 
-/* body,
+body,
 input,
 textarea,
 button {
   font-family: "Inter", sans-serif;
-} */
+}
 
 .app {
-  width: 500px;
   margin: 0 auto;
-  height: 100vh;
   display: flex;
-  margin-left: 500px;
-  
-  list-style: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .header{
@@ -38,30 +35,25 @@ button {
   align-items: center;
   padding: 10px 20px;
   position: sticky;
-  position: -webkit-sticky;
+   /* position: -webkit-sticky;  */
   background-color: #eee;
 }
 
 .nav-item {
   font-weight: 600;
   font-size: 18px;
-  margin: 0 4px;
+  margin: 0 8px;
 }
 
 /* Contact.js */
 form {
- margin-top: 10px;
+ margin-top: 20px;
   display: flex;
-  width: 500px;
+  width: 250px;
+  position: relative;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-@media screen and (min-width: 700px) {
-  form {
-    width: 500px;
-  }
+  
 }
 
 form h1 {
@@ -69,14 +61,11 @@ form h1 {
   text-align: center;
 }
 
-form > input,
-textarea {
+form > input, textarea {
   padding: 10px;
   border-radius: 3px;
-  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
   margin-bottom: 20px;
   border: 1px solid lightgray;
-  /* border: none; */
   background: #fff;
   font-size: 16px;
   color: rgb(0, 0, 32);
@@ -117,31 +106,47 @@ form > button:hover {
   background-color: rgb(0, 0, 196);
 }
 
+@media screen and (min-width: 700px) {
+  form {
+    width: 500px;
+  }
+}
+
+/* Table */
+.table-wrap {
+  overflow: auto;
+}
+
+/* .table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrap::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 12px;
+} */
+
 table {
+  margin-top: 10px;
   border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
-  border: 1px solid #ddd;
-  background-color: #eee;
-  overflow-x: auto;
+}
+
+th {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  text-align: unset;
+}
+
+td {
+  border-bottom: 1px solid #eee;
+  max-width: fit-content;
 }
 
 th, td {
-  text-align: left;
-  padding: 8px;
-  border: 1px solid  #a0a0a0;
-  word-wrap: break-word;
+  padding: 8px 14px;
 }
 
-.text-limit {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-break: 4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 650px;
-  padding: 8px;
-  height: 100%;
-  border: none;
-  border-bottom: 1px solid #a0a0a0;
+td:nth-child(4) {
+  width: 600px;
 }
